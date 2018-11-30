@@ -25,6 +25,9 @@ public class Customer {
 	private int age;
 	private double income;
 	private boolean isEligible;
+	private String state;
+	private boolean isVeteran;
+	private String employementType;
 	private List<String> comments;
 	/**
 	 * @return the firstName
@@ -198,6 +201,42 @@ public class Customer {
 	 */
 	public void setIncome(double income) {
 		this.income = income;
+	}
+	/**
+	 * @return the state
+	 */
+	public String getState() {
+		return state;
+	}
+	/**
+	 * @param state the state to set
+	 */
+	public void setState(String state) {
+		this.state = state;
+	}
+	/**
+	 * @return the isVeteran
+	 */
+	public boolean isVeteran() {
+		return isVeteran;
+	}
+	/**
+	 * @param isVeteran the isVeteran to set
+	 */
+	public void setVeteran(boolean isVeteran) {
+		this.isVeteran = isVeteran;
+	}
+	/**
+	 * @return the employementType
+	 */
+	public String getEmployementType() {
+		return employementType;
+	}
+	/**
+	 * @param employementType the employementType to set
+	 */
+	public void setEmployementType(String employementType) {
+		this.employementType = employementType;
 	}
 	
 }

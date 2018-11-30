@@ -8,6 +8,7 @@ import org.kie.api.runtime.KieSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.usbank.loan.Util.Util;
 import com.usbank.loan.model.Customer;
 import com.usbank.loan.service.EligibilityCheckService;
 
@@ -18,15 +19,22 @@ import com.usbank.loan.service.EligibilityCheckService;
 @Service
 public class EligibilityCheckServiceImpl implements EligibilityCheckService {
 
-	 @Autowired
-	 private KieContainer kieContainer;
+	//uncomment below
+	/* @Autowired
+	 private KieContainer kieContainer;*/
+	
+	//added for testing
+	Util appUtil = new Util();
 	 
 	/* (non-Javadoc)
 	 * @see com.usbank.loan.service.EligibilityCheckService#checkPreEligibility(com.usbank.loan.model.Customer)
 	 */
 	@Override
 	public Customer checkPreEligibility(Customer customer) {
-		KieSession kieSession = kieContainer.newKieSession();
+		//uncomment below 
+		//KieSession kieSession = kieContainer.newKieSession();
+		//Added below just for testing purpose
+		KieSession kieSession = appUtil.kieContainer().newKieSession();
         kieSession.insert(customer);
         kieSession.fireAllRules();
         kieSession.dispose();
